@@ -1,16 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="APP">
 <head>
   <meta charset="UTF-8">
   <title>Angular Registration</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/lib/angular/angular-route.min.js"></script>
+  <script src="js/lib/angular/angular-animate.min.js"></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    const config = {
+      apiKey: "AIzaSyCGOnnZIHzjoE88Naetfnp92rHx5MdHW90",
+      authDomain: "auglarrregistration07.firebaseapp.com",
+      databaseURL: "https://auglarrregistration07.firebaseio.com",
+      projectId: "auglarrregistration07",
+      storageBucket: "",
+      messagingSenderId: "881850793804"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers/registration.js"></script>
+  <script src="js/controllers/success.js"></script>
 </head>
 <body>
-<header></header>
+<header>
+  <nav class="cf" ng-include="'views/nav.html'"></nav>
+</header>
 <div class="page">
-  <main class="cf"></main>
+  <main class="cf" ng-view>
+    {{message}}
+  </main>
 </div>
-</body>
 </html>
+</body>
